@@ -4,37 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="23a597d3-843f-410d-aa4b-fb925eae9442" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/jpa-buddy.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/spicejet/TestRunner.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/spicejet/core/Base.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/spicejet/core/PropKey.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/spicejet/core/PropertyReader.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/spicejet/driver/BrowserType.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/spicejet/driver/DriverFactory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/spicejet/driver/DriverSetup.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/spicejet/pages/HerokuPage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/spicejet/pages/LoginPage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/spicejet/steps/HerokuSteps.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/spicejet/steps/LoginSteps.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/spicejet/steps/StepHooks.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/spicejet/utils/Helper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/spicejet/utils/LogHelper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/spicejet/utils/SystemPropertyHelper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/spicejet/utils/TimeUtil.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/resources/allure.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/resources/drivers/chromedriver" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/resources/features/login.feature" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/resources/log4j.properties" afterDir="false" />
-    </list>
+    <list default="true" id="23a597d3-843f-410d-aa4b-fb925eae9442" name="Changes" comment="UI Test Framework" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -135,6 +105,14 @@
       <option name="presentableId" value="Default" />
       <updated>1674333972349</updated>
     </task>
+    <task id="LOCAL-00001" summary="UI Test Framework">
+      <created>1674722982818</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1674722982818</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -147,5 +125,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="UI Test Framework" />
+    <option name="LAST_COMMIT_MESSAGE" value="UI Test Framework" />
   </component>
 </project>

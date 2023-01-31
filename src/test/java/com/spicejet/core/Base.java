@@ -8,6 +8,9 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.time.Duration;
+import java.time.temporal.ChronoUnit;
+
 
 public abstract class Base{
     protected static WebDriver driver;
@@ -17,7 +20,7 @@ public abstract class Base{
 
     public Base(WebDriver driver) {
         Base.driver = driver;
-        wait = new WebDriverWait(driver, 3);
+        wait = new WebDriverWait(driver, Duration.of(3, ChronoUnit.SECONDS));
         PageFactory.initElements(driver,this);
         this.actions = new Actions(driver);
         this.js = (JavascriptExecutor) driver;

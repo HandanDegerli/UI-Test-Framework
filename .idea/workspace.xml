@@ -4,18 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="23a597d3-843f-410d-aa4b-fb925eae9442" name="Changes" comment="UI Test Framework">
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/spicejet/pages/HomePage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/spicejet/steps/FlightBookingSteps.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/resources/features/flightBooking.feature" afterDir="false" />
+    <list default="true" id="23a597d3-843f-410d-aa4b-fb925eae9442" name="Changes" comment="Added Flight Booking Test Cases">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config.properties" beforeDir="false" afterPath="$PROJECT_DIR$/config.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/spicejet/core/Base.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/spicejet/core/Base.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/spicejet/pages/LoginPage.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/spicejet/steps/LoginSteps.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/spicejet/steps/StepHooks.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/spicejet/steps/StepHooks.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/features/login.feature" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -131,7 +121,14 @@
       <option name="project" value="LOCAL" />
       <updated>1674723121991</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Added Flight Booking Test Cases">
+      <created>1675158968350</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1675158968350</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -147,6 +144,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="UI Test Framework" />
-    <option name="LAST_COMMIT_MESSAGE" value="UI Test Framework" />
+    <MESSAGE value="Added Flight Booking Test Cases" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added Flight Booking Test Cases" />
   </component>
 </project>

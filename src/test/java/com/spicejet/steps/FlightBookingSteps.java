@@ -1,8 +1,10 @@
 package com.spicejet.steps;
 
-import com.spicejet.pages.HomePage;
+import com.spicejet.pages.*;
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
 import org.apache.log4j.Logger;
 import org.openqa.selenium.WebDriver;
 
@@ -12,12 +14,20 @@ import static org.junit.Assert.assertEquals;
 
 public class FlightBookingSteps {
     private HomePage homePage;
+    private FlightSearchPage flightSearchPage;
+    private PassengerDetailPage passengerDetailPage;
+    private FlightDetailPage flightDetailPage;
+    private PaymentPage paymentPage;
 
     private final Logger logger;
 
     public FlightBookingSteps() {
         WebDriver driver = StepHooks.driver;
         this.homePage = new HomePage(driver);
+        this.flightSearchPage = new FlightSearchPage(driver);
+        this.passengerDetailPage = new PassengerDetailPage(driver);
+        this.flightDetailPage = new FlightDetailPage(driver);
+        this.paymentPage = new PaymentPage(driver);
         logger = Logger.getLogger("FlightBookingSteps");
     }
 
@@ -27,26 +37,26 @@ public class FlightBookingSteps {
         homePage.navigateToHomePage();
     }
 
-    @Then("User is clicking on the radio Button")
+    @When("User is clicking on the radio Button")
     public void userIsClickingOnTheRadioButton() {
         logger.info("Booking a flight and choosing round trip");
         homePage.clickOnRadioButton();
     }
 
-    @Then("User is clicking on the From Box and select {string} as From City")
+    @And("User is clicking on the From Box and select {string} as From City")
     public void userIsClickingOnTheFromBoxAndSelectAsFromCity(String city) {
         logger.info("Choosing From City as " + city + " for booking a flight");
         homePage.clickOnFromButton();
         homePage.selectCityFromList(city);
     }
 
-    @Then("User selects {string} as Destination City")
+    @And("User selects {string} as Destination City")
     public void userSelectsAsDestinationCity(String city) {
         logger.info("Choosing Destination City as " + city + " for booking a flight");
         homePage.selectCityFromList(city);
     }
 
-    @Then("User selects Date {string} as Departure Date and Date {string} as Return Date")
+    @And("User selects Date {string} as Departure Date and Date {string} as Return Date")
     public void userSelectsDateAsDepartureDateAndDateAsReturnDate(String departureDate, String returnDate) {
 
         logger.info("Choosing Departure date as " + departureDate + " and Return Date as " + returnDate + " for booking a flight");
@@ -60,13 +70,13 @@ public class FlightBookingSteps {
         homePage.setDepartureAndReturnDate(departDay, departMonth, returnDay, returnMonth);
     }
 
-    @Then("User add {int} Adult Passengers and is clicking on Done Button")
+    @And("User add {int} Adult Passengers and is clicking on Done Button")
     public void userAddAdultPassengersAndIsClickingOnDoneButton(int adultNumber) {
         logger.info("Adding Adult Passenger's number for booking a flight");
         homePage.addPassengers(adultNumber);
     }
 
-    @Then("User selects currency as {string}")
+    @And("User selects currency as {string}")
     public void userSelectsCurrencyAs(String currency) {
         logger.info("Selecting currency as " + currency + " for booking a flight");
         homePage.selectCurrency(currency);
@@ -78,9 +88,60 @@ public class FlightBookingSteps {
         homePage.clickOSearchFlightButton();
     }
 
-    @Then("User is navigated successfully and see {string}")
+    @Given("User is navigated successfully and see {string}")
     public void userIsNavigatedSuccessfullyAndSee(String text) {
         logger.info("See the Flight List on the Navigated Page ");
         assertEquals(text, homePage.getNavigatedPageTitle());
     }
+
+    @When("User is selecting departure and return flights")
+    public void userIsSelectingDepartureAndReturnFlights() throws InterruptedException {
+        flightSearchPage.clickOnDepartureAndReturnFlights();
+    }
+
+    @Then("User is clicking on the Continue Button")
+    public void userIsClickingOnTheContinueButton() throws InterruptedException {
+        flightSearchPage.clickOnContinueButton();
+    }
+
+    @Given("User is navigated to Passenger Detail Page successfully and see {string} as title")
+    public void userIsNavigatedToPassengerDetailPageSuccessfullyAndSeeAsTitle(String title) {
+        assertEquals(title, flightSearchPage.getContactDetailTitle());
+    }
+
+    @When("^User enters the Contact Detail with: (.*) and (.*) and (.*) and (.*) and (.*) and (.*)$")
+    public void userEntersTheContactDetailWithNameAndLastnameAndContactNumberAndEmailAndCountryAndCity(String name, String lastname, String contactNumber, String email, String country, String city) {
+        passengerDetailPage.fillContactDetails(name, lastname, contactNumber, email, country, city);
+    }
+    
+    @And("^User fills the Passenger Form as follow (.*) and (.*)$")
+    public void userFillsThePassengerFormAsFollowNameLastname(String name, String lastname) {
+        passengerDetailPage.fillPassengerForm(name, lastname);
+    }
+    @Then("User click on Traveller Info Continue Button")
+    public void userClickOnTravellerInfoContinueButton() {
+        passengerDetailPage.clickOnTravellerInfoContinueButton();
+    }
+
+    @Then("User click on Continue Adds On Button and Skip")
+    public void userClickOnContinueAddsOnButtonAndSkip() {
+        flightDetailPage.clickOnAddsOnContinueButton();
+    }
+
+    @When("User chooses to make purchase with pay on credit card")
+    public void userChoosesToMakePurchaseWithPayOnCreditCard() {
+        paymentPage.selectPaymentMethod();
+    }
+
+    @And("User enters payment detail with {string} and {string} and {string} and {string} and {string}")
+    public void userEntersPaymentDetailWithAndAndAndAnd(String numberOnCard, String cardName, String expirationMonth, String expirationYear, String securityNumber) throws InterruptedException {
+        paymentPage.fillPaymentDetail(numberOnCard, cardName, expirationMonth, expirationYear, securityNumber);
+    }
+
+    @Then("User proceeds the payment")
+    public void userProceedsThePayment() {
+        paymentPage.proceedPayment();
+    }
+
+
 }

@@ -5,7 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="23a597d3-843f-410d-aa4b-fb925eae9442" name="Changes" comment="Added Flight Booking Test Cases">
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/spicejet/pages/FlightDetailPage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/spicejet/pages/FlightSearchPage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/spicejet/pages/PassengerDetailPage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/spicejet/pages/PaymentPage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/spicejet/TestRunner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/spicejet/TestRunner.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/spicejet/pages/HomePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/spicejet/pages/HomePage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/spicejet/steps/FlightBookingSteps.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/spicejet/steps/FlightBookingSteps.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/features/flightBooking.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/features/flightBooking.feature" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -128,7 +136,14 @@
       <option name="project" value="LOCAL" />
       <updated>1675158968350</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Added Flight Booking Test Cases">
+      <created>1675160964970</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1675160964970</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

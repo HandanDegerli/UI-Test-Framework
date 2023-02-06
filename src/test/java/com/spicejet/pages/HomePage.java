@@ -68,7 +68,6 @@ public class HomePage extends Base {
         destinationCityList.stream().filter(c -> Objects.equals(c.getText(), city)).findFirst().get().click();
     }
 
-
     public void setDepartureAndReturnDate(String departureDate, String monthOfDepartureDate, String returnDate, String monthOfReturnDate){
         List<WebElement> daysOfDepartureDate = months.stream().filter(m -> m.getText().contains(monthOfDepartureDate)).findFirst().get().findElements(daysOfMonth);
         daysOfDepartureDate.stream().filter(d -> d.getText().equalsIgnoreCase(departureDate)).findFirst().get().click();

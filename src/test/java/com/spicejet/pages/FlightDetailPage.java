@@ -22,7 +22,8 @@ public class FlightDetailPage extends Base {
         super(driver);
     }
 
-    public void clickOnAddsOnContinueButton(){
+    public void clickOnAddsOnContinueButton() throws InterruptedException {
+        Thread.sleep(3000);
         scrollToElement(baggage);
         buttonList.get(2).click();
         skipList.get(0).click();

@@ -1,7 +1,6 @@
 package com.spicejet.pages;
 
 import com.spicejet.core.Base;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -42,33 +41,27 @@ public class PaymentPage extends Base {
     }
 
     public void selectPaymentMethod(){
-
         paymentMethodList.get(0).click();
     }
 
     public void fillPaymentDetail(String numberOnCard, String cardName, String expirationMonth, String expirationYear, String securityNumber) throws InterruptedException {
         Thread.sleep(3000);
-
-        driver.switchTo().frame(iframeList.get(0));
-        cardNumber.sendKeys(numberOnCard);
-        driver.switchTo().defaultContent();
-        driver.switchTo().frame(iframeList.get(1));
-        nameOnCard.sendKeys(cardName);
-        driver.switchTo().defaultContent();
-        driver.switchTo().frame(iframeList.get(2));
-        expMonth.sendKeys(expirationMonth);
-        driver.switchTo().defaultContent();
-        driver.switchTo().frame(iframeList.get(3));
-        expYear.sendKeys(expirationYear);
-        driver.switchTo().defaultContent();
-        driver.switchTo().frame(iframeList.get(4));
-        securityCode.sendKeys(securityNumber);
-        driver.switchTo().defaultContent();
+        switchIframe(iframeList.get(0), numberOnCard);
+        switchIframe(iframeList.get(1), cardName);
+        switchIframe(iframeList.get(2), expirationMonth);
+        switchIframe(iframeList.get(3), expirationYear);
+        switchIframe(iframeList.get(4), securityNumber);
         checkBoxList.get(1).click();
     }
 
-    public  void proceedPayment(){
+    public void proceedPayment(){
         waitUntilClickable(proceedButton).click();
+    }
+
+    private void switchIframe( WebElement iframe, String value){
+        driver.switchTo().frame(iframe);
+        cardNumber.sendKeys(value);
+        driver.switchTo().defaultContent();
     }
 
 

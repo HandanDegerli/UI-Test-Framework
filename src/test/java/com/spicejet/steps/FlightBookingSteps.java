@@ -32,19 +32,20 @@ public class FlightBookingSteps {
     }
 
     @Given("User is getting Home Page")
-    public void userIsGettingHomePage() throws IOException {
+    public void user_is_getting_Home_Page() throws IOException {
         logger.info("Navigating to homepage");
         homePage.navigateToHomePage();
+
     }
 
-    @When("User is clicking on the radio Button")
-    public void userIsClickingOnTheRadioButton() {
+    @When("User is clicking on the Round Trip Button")
+    public void userIsClickingOnTheRoundTripButton() {
         logger.info("Booking a flight and choosing round trip");
         homePage.clickOnRadioButton();
     }
 
-    @And("User is clicking on the From Box and select {string} as From City")
-    public void userIsClickingOnTheFromBoxAndSelectAsFromCity(String city) {
+    @And("User selects {string} as Departure City")
+    public void userSelectsAsDepartureCity (String city) {
         logger.info("Choosing From City as " + city + " for booking a flight");
         homePage.clickOnFromButton();
         homePage.selectCityFromList(city);
@@ -124,7 +125,7 @@ public class FlightBookingSteps {
     }
 
     @Then("User click on Continue Adds On Button and Skip")
-    public void userClickOnContinueAddsOnButtonAndSkip() {
+    public void userClickOnContinueAddsOnButtonAndSkip() throws InterruptedException {
         flightDetailPage.clickOnAddsOnContinueButton();
     }
 

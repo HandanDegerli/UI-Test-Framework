@@ -6,6 +6,7 @@ import com.spicejet.core.PropertyReader;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.WindowType;
 import org.openqa.selenium.support.FindBy;
 
 import java.io.IOException;
@@ -48,6 +49,9 @@ public class HomePage extends Base {
     @FindBy(css = "div.css-76zvg2.r-homxoj.r-adyw6z.r-1kfrs79")
     private WebElement navigatedPageTitle;
 
+    @FindBy(linkText = "SpiceHolidays")
+    private WebElement topBarSpiceHolidaysItem;
+
     public HomePage(WebDriver driver) {
         super(driver);
     }
@@ -65,7 +69,7 @@ public class HomePage extends Base {
     }
 
     public void selectCityFromList(String city) {
-        destinationCityList.stream().filter(c -> Objects.equals(c.getText(), city)).findFirst().get().click();
+        destinationCityList.stream().filter(c -> Objects.equals(c.getText(), city)).findFirst().orElseThrow(null).click();
     }
 
     public void setDepartureAndReturnDate(String departureDate, String monthOfDepartureDate, String returnDate, String monthOfReturnDate){
@@ -96,14 +100,14 @@ public class HomePage extends Base {
         return waitUntilVisible(navigatedPageTitle).getText();
     }
 
+    public void clickOnHolidayButton(){
+        topBarSpiceHolidaysItem.click();
+    }
+
     private void setAdultPassengerNumber(int adultNumber){
         if(adultNumber > 1) {
             for(int i = 0; i < adultNumber-1; i++){
                 waitUntilClickable(increaseAdultPassengerNumberBtn).click();
-            }
-        }else if(adultNumber < 1) {
-            for(int j = 0; j < 2 - adultNumber; j++){
-                waitUntilClickable(decreaseAdultPassengerNumberBtn).click();
             }
         }
     }

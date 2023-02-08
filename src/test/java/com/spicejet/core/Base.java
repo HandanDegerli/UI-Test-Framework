@@ -13,14 +13,14 @@ import java.time.temporal.ChronoUnit;
 
 
 public abstract class Base{
-    protected static WebDriver driver;
+    protected WebDriver driver;
     private final WebDriverWait wait;
     private final Actions actions;
     private final JavascriptExecutor js;
 
     public Base(WebDriver driver) {
-        Base.driver = driver;
-        wait = new WebDriverWait(driver, Duration.of(3, ChronoUnit.SECONDS));
+        this.driver = driver;
+        wait = new WebDriverWait(driver, Duration.of(7, ChronoUnit.SECONDS));
         PageFactory.initElements(driver,this);
         this.actions = new Actions(driver);
         this.js = (JavascriptExecutor) driver;

@@ -59,8 +59,7 @@ public class PassengerDetailPage extends Base {
     }
 
     public void fillContactDetails(String name, String lastname, String contactNumber, String email, String country, String city){
-        titleDropdown.click();
-        titleList.get(1).click();
+
         waitUntilClickable(titleDropdown).click();
         titleList.get(1).click();
         nameInput.sendKeys(name);

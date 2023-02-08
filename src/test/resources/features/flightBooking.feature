@@ -1,11 +1,12 @@
 @Booking
 Feature: Booking Flight Case
 
-  Scenario Outline: User should be able to book a flight
-
+  Background:
     Given  User is getting Home Page
-    When User is clicking on the radio Button
-    And User is clicking on the From Box and select "Delhi" as From City
+
+  Scenario Outline: User should be able to book a flight
+    When User is clicking on the Round Trip Button
+    And User selects "Delhi" as Departure City
     And User selects "Goa (Dabolim)" as Destination City
     And User selects Date "18 February 2023" as Departure Date and Date "18 March 2023" as Return Date
     And User add 1 Adult Passengers and is clicking on Done Button
@@ -28,8 +29,8 @@ Feature: Booking Flight Case
     Then User proceeds the payment
 
     Examples:
-      | name   | lastname | contactNumber | email                  | country         | city |
-      | odie | odie   | 6464747747  | romanpasierb@kitchen-tvs.ru | United States | LA |
+      | name | lastname | contactNumber | email                       | country       | city |
+      | odie | odie     | 6464747747    | romanpasierb@kitchen-tvs.ru | United States | LA   |
 
 
 

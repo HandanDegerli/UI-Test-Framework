@@ -6,7 +6,7 @@ import org.junit.runner.RunWith;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(features = "src/test/resources/features",
-        glue = "com/spicejet/steps",
+        glue = "src/test/java/com/spicejet/steps",
         plugin = { "pretty", "html:target/test-output",
         "json:target/cucumber-report/cucumber.json",
         "io.qameta.allure.cucumber5jvm.AllureCucumber5Jvm"

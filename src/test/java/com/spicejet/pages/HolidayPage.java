@@ -57,10 +57,13 @@ public class HolidayPage extends Base {
             waitUntilClickable(destinationCity).click();
         }
 
-        public void filterTripResultsAndViewFirstOption(String packageType){
+        public void filterTripResults(String packageType){
         waitUntilClickable(filterButton).click();
         waitUntilClickable(packageTypeList.stream().filter(p ->p.getText().equalsIgnoreCase(packageType)).findFirst().orElseThrow(null)).click();
-        waitUntilClickable(holidayPackages.get(0)).click();
+        }
+
+        public void ViewFirstOption(){
+            waitUntilClickable(holidayPackages.get(0)).click();
         }
 
         public String getHotelDetailText(){

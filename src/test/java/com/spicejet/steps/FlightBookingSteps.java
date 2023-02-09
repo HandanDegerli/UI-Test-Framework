@@ -97,50 +97,60 @@ public class FlightBookingSteps {
 
     @When("User is selecting departure and return flights")
     public void userIsSelectingDepartureAndReturnFlights() throws InterruptedException {
+        logger.info("Selecting departure and return flights");
         flightSearchPage.clickOnDepartureAndReturnFlights();
     }
 
     @Then("User is clicking on the Continue Button")
     public void userIsClickingOnTheContinueButton() throws InterruptedException {
+        logger.info("Continue to Passenger Detail section");
         flightSearchPage.clickOnContinueButton();
     }
 
     @Given("User is navigated to Passenger Detail Page successfully and see {string} as title")
     public void userIsNavigatedToPassengerDetailPageSuccessfullyAndSeeAsTitle(String title) {
+        logger.info("Assertion to understand that navigation to Passenger Detail Page successfully");
         assertEquals(title, flightSearchPage.getContactDetailTitle());
     }
 
     @When("^User enters the Contact Detail with: (.*) and (.*) and (.*) and (.*) and (.*) and (.*)$")
     public void userEntersTheContactDetailWithNameAndLastnameAndContactNumberAndEmailAndCountryAndCity(String name, String lastname, String contactNumber, String email, String country, String city) {
+        logger.info("Filling Contact Detail on the Passenger Detail Page");
         passengerDetailPage.fillContactDetails(name, lastname, contactNumber, email, country, city);
     }
     
     @And("^User fills the Passenger Form as follow (.*) and (.*)$")
     public void userFillsThePassengerFormAsFollowNameLastname(String name, String lastname) {
+        logger.info("Filling Passenger Detail on the Passenger Detail Page");
         passengerDetailPage.fillPassengerForm(name, lastname);
     }
     @Then("User click on Traveller Info Continue Button")
     public void userClickOnTravellerInfoContinueButton() {
+        logger.info("Clicking on Continue Button on Passenger Detail Page to continue to Adds-on Page");
         passengerDetailPage.clickOnTravellerInfoContinueButton();
     }
 
     @Then("User click on Continue Adds On Button and Skip")
     public void userClickOnContinueAddsOnButtonAndSkip() throws InterruptedException {
+        logger.info("Clicking on Skip Button on Passenger Detail Page to continue to Adds-on Page");
         flightDetailPage.clickOnAddsOnContinueButton();
     }
 
     @When("User chooses to make purchase with pay on credit card")
     public void userChoosesToMakePurchaseWithPayOnCreditCard() {
+        logger.info("Choosing Credit Card Option as Payment Method");
         paymentPage.selectPaymentMethod();
     }
 
     @And("User enters payment detail with {string} and {string} and {string} and {string} and {string}")
     public void userEntersPaymentDetailWithAndAndAndAnd(String numberOnCard, String cardName, String expirationMonth, String expirationYear, String securityNumber) throws InterruptedException {
+        logger.info("Filling Payment Detail on the Payment Page");
         paymentPage.fillPaymentDetail(numberOnCard, cardName, expirationMonth, expirationYear, securityNumber);
     }
 
     @Then("User proceeds the payment")
     public void userProceedsThePayment() {
+        logger.info("Clicking on Proceeds Payment Button on the Payment Page");
         paymentPage.proceedPayment();
     }
 

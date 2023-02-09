@@ -31,7 +31,7 @@ public class FlightSearchPage extends Base {
         waitUntilClickable(saverPriceList).click();
         Thread.sleep(3000);
         WebElement saverPrice = returnList.get(0).findElement(By.cssSelector("div[data-testid='spicesaver-flight-select-radio-button-1']"));
-        //scrollToElement(saverPrice).click();
+        scrollToElement(saverPrice).click();
     }
     public void clickOnContinueButton() throws InterruptedException {
         Thread.sleep(3000);
